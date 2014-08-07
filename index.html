@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
+    <section class="" data-id="b3c25a010e059297f89bf45f51739876">
+        <h1>USCG JavaScript Workshop</h1>
+<h2>
+        <br>
+    </h2>
+<h2>Tom Wayson</h2>
+<div>
+    <h3 style="text-align: center; font-style: normal; font-variant: normal;">&nbsp;ESRI Professional Services</h3>
+</div>
+<div>
+<br>
+</div>
+<div>
+<a href="mailto:twayson@esri.com">twayson@esri.com</a>
+</div>
+<div>@tomwayson on <a href="https://github.com/tomwayson">GitHub</a> and <a href="https://twitter.com/tomwayson">Twitter</a>
+</div>
+</section>
+<section class="" data-id="c067d0c8e68741ed3e8f18dd14d0ba3a">
+    <h2 style="text-align: center;">About Me</h2>
+<h3 style="text-align: center;">
+<span>Web Application Developer, Database Services</span>
+    <br>
+</h3>
+<div>
+<p>
+    </p>
+<span>Clients: NASA,&nbsp;</span>
+    <span>State of Oregon, Becks Hybrids, Utilities</span>
+    <br>
+    <span>ArcGIS Online apps and templates</span>
+    <br>
+    <p>
+</p>
+</div>
+<h3 style="text-align: center;">
+<br>
+</h3>
+<h3 style="text-align: center;">14 yrs as Web GIS Developer &amp; Consultant</h3>
+<p>
+</p>
+<span>Clients: Electric utilities, local government</span>
+<br>
+<span>Technology: JavaScript, ASP.Net, Oracle Spatial</span>
+<br>
+<p>
+</p>
+<div>
+<span>
+    <br>
+</span>
+</div>
+<h3>
+<pre><code>// I &lt;3 JavaScript </code></pre>
+</h3>
+<br>
+</section>
+<section class="" data-id="d726c797a3646ba8e8fe61ad9290b6bb">
+    <h2>Today (8/6/2014)</h2>
+<div>
+    <ul>
+<li class="fragment" data-fragment-index="0">
+<span style="text-align: center;">Our approach to JavaScript app development</span>
+    <br>
+</li>
+<li class="fragment" data-fragment-index="1">
+    <span style="text-align: center;">What JavaScript topics do you want cover?</span>
+</li>
+<li class="fragment" data-fragment-index="2">
+<span style="text-align: center;">Requirements and gap analysis</span>
+</li>
+<li class="fragment" data-fragment-index="3">
+<span style="text-align: center;">JavaScript prototyping and deep dive</span>
+</li>
+<li class="fragment" data-fragment-index="4">
+<span style="text-align: center;">Analysis of alternatives document</span>
+</li>
+<li class="fragment" data-fragment-index="5">
+<span style="text-align: center;">Anything I missed?</span>
+</li>
+</ul>
+</div>
+</section>
+<section class="stack" data-id="d1081666a6dd0e726e459b38e1e70797">
+    <section class="" data-id="0204dc78b6faea16103982d77ece6603">
+        <h2>To JavaScript, or Not...</h2>
+<h3>...that is the question</h3>
+<div>
+        <br>
+    </div>
+<p>JavaScript is not the best solution for:</p>
+<p>
+    <br>
+    </p>
+<ul>
+<li class="fragment" data-fragment-index="0">
+<span>Offline, and in particular disconnected editing</span>
+    <br>
+</li>
+<li class="fragment" data-fragment-index="1">
+<span>Taking advantage of device's special capabilities</span>
+    <br>
+</li>
+<li class="fragment" data-fragment-index="2">
+<span>Working with local data (on disk)</span>
+    <br>
+</li>
+<li class="fragment" data-fragment-index="3">
+    <span>3D and other intensive rendering tasks (yet)</span>
+</li>
+<li class="fragment" data-fragment-index="4">
+<span>Computationally&nbsp;intensive work w/ millions of records</span>
+</li>
+<li class="fragment" data-fragment-index="5">No in house experience with, or interest in the language</li>
+</ul>
+<p>
+</p>
+</section>
+<section class="" data-id="50b03fcd5a2d2c9b276ee8d7a4f3daae">
+    <h2>
+<span style="font-size: 64.566px;">To JavaScript, or Not...</span>
+    <br>
+</h2>
+<div>
+<h3 style="font-style: normal; font-variant: normal;">...that is the question</h3>
+<div style="font-size: 36.01600646972656px; font-style: normal; font-variant: normal;">
+    <br>
+</div>
+<p style="font-size: 36.01600646972656px; font-style: normal; font-variant: normal;">JavaScript is a good solution for:</p>
+<p style="font-size: 36.01600646972656px; font-style: normal; font-variant: normal;">
+<br>
+</p>
+<ul style="font-size: 36.01600646972656px; font-style: normal; font-variant: normal;">
+<li class="fragment" data-fragment-index="0">Pretty much everything else</li>
+</ul>
+</div>
+</section>
+</section>
+<section class="" data-id="f8e90b3e77274335e0c505c6f51889ba">
+    <h2>So, You've Chosen JS...</h2>
+<div>Questions for new JavaScript app development:</div>
+<div>
+    <ul>
+<li class="fragment" data-fragment-index="0">
+    <span style="text-align: center;">Kitchen sink?</span>
+</li>
+<ul>
+<li class="fragment" data-fragment-index="1">
+    <span style="text-align: center;">Web AppBuilder</span>
+</li>
+</ul>
+<li class="fragment" data-fragment-index="2">
+<span style="text-align: center;">
+    <span style="font-size: 36.01600646972656px; font-style: normal; font-variant: normal;">Focussed app?</span>
+    <br>
+</span>
+</li>
+<ul>
+<li class="fragment" data-fragment-index="3">
+    <span style="text-align: center;">Is there a template that is a good match?</span>
+</li>
+</ul>
+<li class="fragment" data-fragment-index="4">
+<span style="text-align: center;">Browser support? mobile/touch support needed?</span>
+<br>
+</li>
+<ul>
+<li class="fragment" data-fragment-index="5">
+    <span style="text-align: center;">Web AppBuilder or Bootstrap templates</span>
+</li>
+</ul>
+<li class="fragment" data-fragment-index="6">
+<span style="text-align: center;">How important is UI/UX design?</span>
+</li>
+<li class="fragment" data-fragment-index="7">
+<span style="text-align: center;">What in house capabilities does the client have?</span>
+</li>
+<li class="fragment" data-fragment-index="8">
+<span style="text-align: center;">What environment will app be integrated into?&nbsp;</span>
+</li>
+</ul>
+</div>
+<div>
+<br>
+</div>
+</section>
+<section class="stack" data-id="764a0cf42e90e0c58b1ac5728db88652">
+    <section class="" data-id="42ba2c453082eedbf4640790c509c382">
+        <h2>Templates and Samples</h2>
+<h3>
+        <br>
+    </h3>
+<h3>Templates</h3>
+<div>Most are on GitHub now&nbsp;<a href="http://esri.github.io/">http://esri.github.io/</a>
+</div>
+<div>
+    <br>
+</div>
+<div>Typically very specific, but some are more generic:</div>
+<div>
+<ul>
+<li>
+<a href="https://github.com/Esri/public-information-map-template-js">Public Information Template</a>
+</li>
+<li>
+<a href="https://github.com/Esri/Viewer">Basic Viewer</a>
+</li>
+<li>
+<a href="https://github.com/Esri/bootstrap-map-js">Bootstrap Map</a>
+</li>
+<li>
+<a href="https://github.com/DavidSpriggs/ConfigurableViewerJSAPI">Configurable JSAPI Viewer</a>
+</li>
+</ul>
+</div>
+</section>
+<section class="" data-id="62633ca62ce9d072c0e7888f0b673d76">
+    <h2 style="font-style: normal; font-variant: normal;">Templates and Samples</h2>
+<div>
+    <br>
+</div>
+<div>
+    <h3 style="font-style: normal; font-variant: normal;">Samples</h3>
+</div>
+<div>
+<div style="font-size: 36.01600646972656px; font-style: normal; font-variant: normal;">
+<a href="https://developers.arcgis.com/javascript/jssamples/">https://developers.arcgis.com/javascript/jssamples/</a>
+</div>
+<div style="font-size: 36.01600646972656px; font-style: normal; font-variant: normal;">
+<br>
+</div>
+<div style="font-size: 36.01600646972656px; font-style: normal; font-variant: normal;">Useful to establish capabilities, and identify gaps.</div>
+<div style="font-size: 36.01600646972656px; font-style: normal; font-variant: normal;">
+    <br>
+</div>
+<div style="font-size: 36.01600646972656px; font-style: normal; font-variant: normal;">Samples are for reference, not for copying code.</div>
+<div style="font-size: 36.01600646972656px; font-style: normal; font-variant: normal;">
+<br>
+</div>
+<div style="font-size: 36.01600646972656px; font-style: normal; font-variant: normal;">Keep a list of links to relevant samples in a wiki or spreadsheet&nbsp;</div>
+</div>
+</section>
+</section>
+<section class="" data-id="6ed387abec0aead6af3cf556ad387356">
+    <h2>The Problems with JavaScript</h2>
+<div class="visible" data-fragment-index="2" style="font-size: 36.01600646972656px; font-style: normal; font-variant: normal;">Browser/mobile/touch differences.</div>
+<div class="fragment" data-fragment-index="0">Anything goes.&nbsp;<span>No (obvious) right way.</span>
+</div>
+<div class="fragment" data-fragment-index="1">Easy to do it "wrong" (for a long time).</div>
+<div class="visible" data-fragment-index="2">
+<span>&nbsp;</span>
+    <br>
+</div>
+<div class="fragment" data-fragment-index="2">Need framework(s) to mitigate above issues<span style="text-align: left;">, but...</span>
+</div>
+<div class="fragment" data-fragment-index="3">
+    <span style="text-align: left;">There's dozens of frameworks. Which is best?</span>
+</div>
+</section>
+<section class="stack" data-id="48598130d439d3aff479c809c939ac0b">
+    <section class="" data-id="601d654306fe944546ca4e1309473239">
+        <h2>Esri Uses Dojo</h2>
+<h3>
+        <br>
+    </h3>
+<h3>The Good Parts</h3>
+<div>
+    <ul>
+<li>
+    <span style="text-align: center;">Asynchronous Module Definition (AMD)</span>
+    </li>
+<li>
+<span style="text-align: center;">Classes and mixins</span>
+    <br>
+</li>
+<li>
+<span style="text-align: center;">Widgets and d</span>
+    <span style="text-align: center;">eclarative syntax</span>
+</li>
+<li>
+    <span style="text-align: center;">i18n</span>
+</li>
+</ul>
+</div>
+<div>
+<br>
+</div>
+<p>
+</p>
+</section>
+<section class="" data-id="800374fc72a549f0fa875cf1afd156a6">
+    <h2>... And the Not So Good Parts</h2>
+<div>
+<h3 style="font-style: normal; font-variant: normal;">
+    <span style="font-size: 47.43px;">
+        <br>
+    </span>
+    </h3>
+<h3 style="font-style: normal; font-variant: normal;">
+<span style="font-size: 47.43px;">The Bad&nbsp;</span>
+    <br>
+</h3>
+<p style="font-size: 36.01600646972656px; font-style: normal; font-variant: normal;">
+</p>
+<ul style="font-size: 36.01600646972656px; font-style: normal; font-variant: normal;">
+<li>Not prescriptive enough on app architecture</li>
+<li>CDN hosted build (very difficult to optimize)</li>
+<li>Too big a framework, both:</li>
+<ul>
+<li>when downloading at runtime</li>
+<li>and evolves slower than others</li>
+</ul>
+</ul>
+<h3 style="font-style: normal; font-variant: normal;">
+<br>
+</h3>
+<h3 style="font-style: normal; font-variant: normal;">The Ugly</h3>
+<div style="font-size: 36.01600646972656px; font-style: normal; font-variant: normal;">
+<ul>
+<li>Dijit layout, styles, form controls</li>
+<span style="font-size: 36.3221244812012px; font-style: normal; font-variant: normal; text-align: center;">
+</span>
+</ul>
+</div>
+</div>
+</section>
+</section>
+<section class="" data-id="6ca20b60b25a40357fa68aafdd7aa797">
+    <h2>Suggested Implementations</h2>
+<div>
+    <ul>
+<li>Web AppBuilder</li>
+<ul>
+<li>adds the prescriptive structure for complex apps</li>
+<li>responsive design</li>
+</ul>
+<li>
+<span>
+    <a href="https://github.com/Esri/dojo-bootstrap-map-js">Dojo-Bootstrap-Map template</a>
+</span>
+<br>
+</li>
+<ul>
+<li>only uses the good parts of Dojo</li>
+<li>replaces bad parts w/ Bootstrap (also responsive)</li>
+</ul>
+<li>Backbone + jQuery + Bootstrap</li>
+<ul>
+<li>only use Esri/Dojo for mapping</li>
+<li>app structure conforms to modern best practices</li>
+</ul>
+<li>
+<a href="https://github.com/Esri/esri-leaflet">Esri-leaflet</a>
+</li>
+<ul>
+<li>a "Nojo" solution for lightweight apps only</li>
+</ul>
+</ul>
+</div>
+</section>
+<section class="" data-id="cac66f4c8f083d69a9db9e118fe529e2">
+    <h2>JavaScript Topics</h2>
+<div>
+    <br>
+    </div>
+<div>JSAPI Tour</div>
+<div>Specific functionality (StreamLayer)</div>
+<div>
+<span>Writing your own widgets/classes</span>
+    <br>
+</div>
+<div style="font-size: 36.01600646972656px; font-style: normal; font-variant: normal;">Commonly used app templates</div>
+<div>Tooling (IDE, static analysis, etc)</div>
+<div>Application frameworks (Dojo, Bootstrap, Backbone, etc)</div>
+<div>Automated Testing</div>
+<div>
+    <span>&nbsp;</span>
+</div>
+</section>
+<section class="stack" data-id="608f059ae0dce5e4b601c3ff1548404b">
+    <section class="" data-id="e4b4604bea501b2294054f79c79cba2f">
+        <h2>Esri JS Resources</h2>
+<p>
+        </p>
+<ul>
+<li>Esri JavaScript</li>
+<ul>
+<li>
+<a href="https://developers.arcgis.com/javascript/">ArcGIS API for JavaScript</a>: reference, samples, tutorials</li>
+<li>Web App Builder: <a href="https://betacommunity.esri.com/callout/?callid=6811D4EE591E41FA91FE743D294B114B">Beta community</a>, <a href="http://video.esri.com/watch/3362/customizing-and-extending-web-appbuilder-for-arcgis">video</a>, <a href="https://www.npmjs.org/package/generator-esri-appbuilder-js">generator</a>
+</li>
+<li>Templates:<span>&nbsp;</span>
+        <a href="http://esri.github.io/#JavaScript">GitHub</a>
+        <span>, </span>
+        <a href="http://www.arcgis.com/home/search.html?q=Template&amp;t=content&amp;focus=applications-web-javascript-configurable">ArcGIS Online</a>
+</li>
+<ul>
+        <li>
+<span>Good ones</span>
+        <span>:&nbsp;</span>
+        <a href="https://github.com/Esri/public-information-map-template-js" style="font-size: 36.3221244812012px; font-style: normal; font-variant: normal;">Public Information Template</a>
+        <span>,&nbsp;</span>
+        <a href="https://github.com/Esri/Viewer" style="font-size: 36.3221244812012px; font-style: normal; font-variant: normal;">Basic Viewer</a>
+        <span>,&nbsp;</span>
+        <a href="https://github.com/Esri/bootstrap-map-js" style="font-size: 36.3221244812012px; font-style: normal; font-variant: normal;">Bootstrap Map</a>
+        <span>,&nbsp;</span>
+        <a href="https://github.com/DavidSpriggs/ConfigurableViewerJSAPI" style="font-size: 36.3221244812012px; font-style: normal; font-variant: normal;">Configurable JSAPI Viewer</a>
+</li>
+    </ul>
+    <li>
+        <a href="http://video.esri.com/search/javascript">Videos</a>
+    </li>
+</ul>
+<li>
+    <span>JavaScript Application Frameworks</span>
+</li>
+<ul>
+<li>Dojo:&nbsp;<a href="http://dojotoolkit.org/reference-guide/">Reference</a>, <a href="http://dojotoolkit.org/documentation/">tutorials</a>, <a href="http://dojotoolkit.org/api/">API</a>, <a href="https://www.sitepen.com/">SitePen</a> (training, blog)</li>
+<li>Others: <a href="http://jquery.com/">jQuery</a>, <a href="http://getbootstrap.com/">Bootstrap</a>, <a href="http://backbonejs.org/">Backbone</a>, <a href="https://angularjs.org/">Angular</a> ...</li>
+</ul>
+<li>[Continued below...]</li>
+</ul>
+</section>
+<section class="" data-id="d1b5fafd5739c233f85193979663b336">
+    <h2 style="font-style: normal; font-variant: normal;">Esri JS Resources (cont)</h2>
+<span style="text-align: left;">
+    <ul>
+<li>
+<span>Tooling</span>
+    <br>
+</li>
+<ul>
+<li>
+<span>Command Line:</span>
+    <span>&nbsp;</span>
+    <a href="http://nodejs.org/">Node</a>
+    <span>,</span>
+    <span>&nbsp;</span>
+    <a href="https://www.npmjs.org/">NPM</a>
+    <span>,&nbsp;</span>
+    <a href="http://gruntjs.com/">Grunt</a>
+    <span>,</span>
+    <span>&nbsp;</span>
+    <a href="http://bower.io/">Bower</a>
+    <span>,</span>
+    <span>&nbsp;</span>
+    <a href="http://yeoman.io/">Yeoman</a>
+</li>
+<li>
+<span>IDEs:</span>
+    <span>&nbsp;</span>
+    <a href="http://www.sublimetext.com/3">SublimeText</a>
+    <span>,</span>
+    <span>&nbsp;</span>
+    <a href="http://www.jetbrains.com/webstorm/">WebStorm</a>
+    <span>,</span>
+    <span>&nbsp;</span>
+    <a href="http://www.aptana.com/products/studio3">Aptana</a>
+</li>
+<li>
+<span>Josh Peterson's</span>
+    <span>&nbsp;</span>
+    <a href="https://github.com/jpeterson/js-tooling-talk">DevSummit presentation</a>
+</li>
+</ul>
+<li>
+<span>Testing Esri JS</span>
+    <br>
+</li>
+<ul>
+    <li>
+        <a href="https://github.com/tomwayson/esri-js-testing-tools-and-patterns" style="text-align: center;">2014 DevSummit presentation</a>
+    </li>
+</ul>
+</ul>
+<br>
+<ul>
+</ul>
+</span>
+<div>
+    <br>
+</div>
+</section>
+</section>
+</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
